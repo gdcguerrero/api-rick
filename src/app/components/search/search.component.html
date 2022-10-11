@@ -1,0 +1,12 @@
+<mat-card class="example-card">
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" name="name" [(ngModel)]="name" (input)="onInput()">
+    </mat-form-field>
+</mat-card>
+
+<mat-card class="example-card" *ngIf="personaje$ | async as personaje">
+    <mat-card-title>{{personaje.results[0].status}}</mat-card-title>
+    <img [src]="personaje.results[0].image" class="title">
+    <mat-card-subtitle class="title">Nombre: {{personaje.results[0].name}}</mat-card-subtitle>
+</mat-card>

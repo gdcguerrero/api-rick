@@ -1,0 +1,26 @@
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+.example-card {
+    max-width: 400px;
+    margin: auto;
+}
+
+.example-form-field {
+    width: 200px;
+}
+
+section {
+    display: table;
+  }
+
+.example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+}
+
+.example-button-row {
+    display: table-cell;
+    width: 490px;
+}
