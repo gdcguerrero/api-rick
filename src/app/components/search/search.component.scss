@@ -1,12 +1,46 @@
-.example-card {
-    max-width: 400px;
-    margin: auto;
+mat-grid-tile {
+    position: relative;
+    background-size: cover;
 }
 
-.example-form-field {
-    width: 200px;
+.list {
+    width: 20vw;
+    background-color: #E91E63;
+}
+
+.example-sidenav-content {
+    padding: 5rem;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.size {
+    width: 100vw;
+    height: 100vh;
+}
+
+mat-card{
+    width: 150px;
+    height: 200px;
+    padding: 0%;
+    margin: 10px;
+    float: left;
 }
 
 .title{
-    margin: 25px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0%;
+    background-color: rgba(0, 0, 0, 0.492);
+    font-size: 1rem;
+}
+
+mat-card-title{
+    margin: 0%;
+    margin-bottom: 5px;
+    mat-card-subtitle{
+        margin: 0%;
+    }
 }

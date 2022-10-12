@@ -20,17 +20,20 @@ export class ApiService {
   }
 
   searchName(name: string): Observable<any> {
-    let temporal: Observable<any> = this.http.post('http://ec2-18-116-97-69.us-east-2.compute.amazonaws.com:4001/mirror/rickandmorty',
+    return this.http.post('http://ec2-18-116-97-69.us-east-2.compute.amazonaws.com:4001/mirror/rickandmorty',
     {
       "endpoint": "character/?name=" + name
     })
-    return temporal
   }
 
   token(): Observable<any>{
     return this.http.post('http://ec2-18-116-97-69.us-east-2.compute.amazonaws.com:4001/api/refresh',{
       session: StorageHerlper.getItem('session')
     })
+  }
+
+  getList(): Observable<any>{
+    return this.http.get('https://rickandmortyapi.com/api/character')
   }
 
 }

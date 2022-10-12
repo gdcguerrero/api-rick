@@ -1,12 +1,29 @@
-<mat-card class="example-card">
-    <mat-form-field class="example-form-field" appearance="fill">
-        <mat-label>Nombre</mat-label>
-        <input matInput type="text" name="name" [(ngModel)]="name" (input)="onInput()">
-    </mat-form-field>
-</mat-card>
+<!-- <mat-grid-list cols="1" rowHeight="100px">
+    <mat-grid-tile >
+        hola
+    </mat-grid-tile>
+  </mat-grid-list> -->
 
-<mat-card class="example-card" *ngIf="personaje$ | async as personaje">
-    <mat-card-title>{{personaje.results[0].status}}</mat-card-title>
-    <img [src]="personaje.results[0].image" class="title">
-    <mat-card-subtitle class="title">Nombre: {{personaje.results[0].name}}</mat-card-subtitle>
-</mat-card>
+<mat-drawer-container class="size">
+    <mat-drawer #drawer mode="side">
+        <div class="list">
+            <mat-list *ngFor="let resp of apiList.results;">
+                <mat-list-item (click)="onClick(resp.name)">{{resp.name}}</mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+    </mat-drawer>
+    <mat-icon fontIcon="menu" (click)="drawer.toggle()" style="color: #E91E63; margin-left: 2rem;"></mat-icon>
+    <div class="example-sidenav-content" >
+        <mat-card *ngFor="let resp of cartoon.results;">
+            <mat-grid-list cols="1" rowHeight="200px">
+                <mat-grid-tile [ngStyle]="{ 'background-image' : 'url('+resp.image+')'}">
+                    <div class="title">
+                        <mat-card-title>{{resp.name}}</mat-card-title>
+                        <mat-card-subtitle>{{resp.status}}</mat-card-subtitle>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card>
+    </div>
+</mat-drawer-container>
